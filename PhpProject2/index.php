@@ -14,7 +14,7 @@ and open the template in the editor.
     <body>
         
         <?php 
-    echo 'sds';
+    echo "ssss<br/>";
     $db = new mysqli("localhost", "phpTest", "o", "redcap");
     if($db->connect_error) {
         die("Connect Error ({$db->connect_errno}){$db->connect_error}");
@@ -22,11 +22,11 @@ and open the template in the editor.
     /* $sql = "SELECT project_id, project_name, app_title FROM redcap.redcap_projects;"; */
     $sql = "SELECT * FROM redcap.redcap_projects;"; 
     $result = $db->query($sql);
-    echo $sql;
-    echo $result +'\n';
+    echo "eeewewew<br/>";
     
-?>
-        
+    echo $sql + "<br/>";
+    echo $result + "<br/>";
+?>        
         
         afjlkfadfdsafdsa
         <table cellSpacing="2" cellPaddin="6" align="center" border="1">
