@@ -39,7 +39,9 @@
                 echo "</tr>";               
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
-                    echo "<tr>", $row['project_id'], " </tr>";
+                    echo "<td>", $row['project_id'], " </td>";
+                    echo "<td>", $row['project_name'], " </td>";
+                    echo "<td>", $row['app_title'], " </td>";
                 echo "</tr>";
             }
             echo "</table>";
