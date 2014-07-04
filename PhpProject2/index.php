@@ -13,7 +13,7 @@ and open the template in the editor.
     </head>
     <body>
         
-        <?php 
+    <?php 
     echo "ssss<br/>";
     $db = new mysqli("localhost", "phpTest", "o", "redcap");
     if($db->connect_error) {
@@ -25,7 +25,7 @@ and open the template in the editor.
     echo "eeewewew<br/>";
     
     echo $sql . "<br/>";
-?>        
+    ?>        
         
         break breakable<br/>
         <table cellSpacing="2" cellPaddin="6" align="center" border="1">
@@ -42,11 +42,6 @@ and open the template in the editor.
 
             <?php 
             while ($row = $result->fetch_assoc()) {?>
-<!--//                echo "<tr>";
-//                    echo "<td>ID</td>";
-//                    echo "<td>Name</td>";
-//                    echo "<td>Title</td>";
-//                echo "</tr>";-->
                 <tr>
                     <td><?php echo $row['project_id']; ?> </td>
                     <td><?php echo $row['project_name']; ?> </td>
@@ -78,5 +73,29 @@ and open the template in the editor.
         <li>status</li>
         <li>deleted</li>
     </ul>
+    
+    <?php
+    $creator = array(
+        'Light bulb' => "Edison", //key => value
+        'Rotary' => "Wankel",
+        'EBDB' => "Taco");
+    
+    foreach ($creator as $key => $value) {
+        echo "{$value} created the {$key}.<br/>";
+    }
+    
+    asort($creator);
+    foreach ($creator as $key => $value) {
+        echo "{$value} created the {$key}.<br/>";
+    }
+    echo $creator ."<br/>"    
+    ?>
+    
+    <?php
+    
+    ?>
+    
+    
+    
     </body>
 </html>
