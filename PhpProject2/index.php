@@ -9,7 +9,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Php Project 2</title>
+        <title>PHP Project 2</title>
     </head>
     <body>
         
@@ -24,15 +24,14 @@ and open the template in the editor.
     $result = $db->query($sql);
     echo "eeewewew<br/>";
     
-    echo $sql + "<br/>";
-    echo $result + "<br/>";
+    echo $sql . "<br/>";
 ?>        
         
-        afjlkfadfdsafdsa
+        break breakable<br/>
         <table cellSpacing="2" cellPaddin="6" align="center" border="1">
             <tr>
-                <td colspan="4">
-                    <h3 align="center">Header2</h3>
+                <td colspan="3">
+                    <h3 align="center">redcap_projects</h3>
                 </td>
             </tr>
             <tr>
@@ -40,10 +39,22 @@ and open the template in the editor.
                 <td>Name</td>
                 <td>Title</td>
             </tr>
-            
 
+            <?php 
+            while ($row = $result->fetch_assoc()) {?>
+<!--//                echo "<tr>";
+//                    echo "<td>ID</td>";
+//                    echo "<td>Name</td>";
+//                    echo "<td>Title</td>";
+//                echo "</tr>";-->
+                <tr>
+                    <td><?php echo $row['project_id']; ?> </td>
+                    <td><?php echo $row['project_name']; ?> </td>
+                    <td><?php echo $row['app_title']; ?> </td>
+                </tr>
+            <?php }
+            ?>
         </table>
-
         
         
         <?php if(!empty($_POST['participantID'])) {
