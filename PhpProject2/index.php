@@ -43,13 +43,48 @@ and open the template in the editor.
             <?php 
             while ($row = $result->fetch_assoc()) {?>
                 <tr>
-                    <td><?php echo $row['project_id']; ?> </td>
-                    <td><?php echo $row['project_name']; ?> </td>
-                    <td><?php echo $row['app_title']; ?> </td>
+                    <td><?php echo $row['project_id']; ?></td>
+                    <td><?php echo $row['project_name']; ?></td>
+                    <td><?php echo $row['app_title']; ?></td>
                 </tr>
             <?php }
             ?>
         </table>
+        <br/>
+        
+        
+        <?php 
+        function printCell($row, $columnName) {      
+            $p = $row[$columnName];
+            echo '<td>'.$p.'</td>';
+        }
+        ?>
+        <table cellSpacing="2" cellPaddin="6" align="center" border="1">
+            <tr>
+                <td colspan="3">
+                    <h3 align="center">redcap_projects2</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>ID2</td>
+                <td>Name2</td>
+                <td>Title2</td>
+            </tr>
+
+            <?php 
+            $result = $db->query($sql);
+            while ($row = $result->fetch_assoc()) {?>
+                <tr>
+                    <?php
+                    printCell($row, 'project_id');
+                    printCell($row, 'project_name');
+                    printCell($row, 'app_title');
+                    ?>
+                </tr>
+            <?php } ?>
+        </table>
+        <br/>        
+        
         
         
         <?php if(!empty($_POST['participantID'])) {
