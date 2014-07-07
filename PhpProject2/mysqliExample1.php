@@ -31,7 +31,7 @@
             printf("Select returned %d rows.\n", $result->num_rows);
             
             echo "a", "b<br/>";
-            echo "<table>";
+            echo "<table border=\"1\">";
                 echo "<tr>";
                     echo "<td>ID</td>";
                     echo "<td>Name</td>";

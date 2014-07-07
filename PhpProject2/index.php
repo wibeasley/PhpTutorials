@@ -127,10 +127,30 @@ and open the template in the editor.
     ?>
     
     <?php
-    
+        $a = 1000;
+        $b = 2000;
+        $g = 3000;
+        function GlobalTest(&$f) {
+            global $b; #"Must be declared before any uses of the global variable, or variables you want to access."
+            $a += 1;
+            $b += 2;
+            $GLOBALS['c'] += 300;
+            static $d  = 0;
+            $f = $f +10;
+            return $d++;
+        }
+        for( $i = 1; $i <= 5; $i++ ) {
+            $e = GlobalTest($g);
+            echo 'e: ' . $e . '<br/>';
+        }
+        echo 'a: ' . $a . '<br/>';
+        echo 'b: ' . $b . '<br/>';
+        echo 'c: ' . $GLOBALS['c'] . '<br/>';
+        echo 'd: ' . $d . '<br/>';
+        echo 'e: ' . $e . '<br/>';
+        echo 'g: ' . $g . '<br/>';
+        
     ?>
-    
-    
     
     </body>
 </html>
