@@ -1,3 +1,4 @@
+ <!-- Working through example of *Programming PHP* by Kevin Tatroe, Peter MacIntyre, and Rasmus Lerdorf -->
 <html>
     <head>
         <meta charset="UTF-8">

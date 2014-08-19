@@ -1,3 +1,4 @@
+ <!-- Working through example of *Programming PHP* by Kevin Tatroe, Peter MacIntyre, and Rasmus Lerdorf -->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -5,14 +6,15 @@
     </head>
     <body>
         <?php
-            //Working through example of *Programming PHP* by Kevin Tatroe, Peter MacIntyre, and Rasmus Lerdorf
 
             $amount1 = "zero";
             $frame1 = "There was $amount1 of wind before 2pm and 3pm.<br/>";
             echo $frame1;
             $amount2 = "3";
-            $frame2 = "There was {$amount2} knots of wind before 3pm and 4pm.<br/>";
-            echo $frame2;
+            $frame2a = "There was {$amount2} knots of wind before 3pm and 4pm.<br/>";
+            echo $frame2a;
+            $frame2b = "There was {{$amount2}} knots of wind before 3pm and 4pm.<br/>";
+            echo $frame2b;
             $frame3 = 'There was $amount1 of wind before 2pm and 3pm.<br/>'; //The interpolation won't work b/c of the single quotes.  The NetBeans highlighting reinforces that.
             echo $frame3;
             $frame4 = 'There was {$amount2} knots of wind before 3pm and 4pm.<br/>'; //The interpolation won't work b/c of the single quotes.  The NetBeans highlighting reinforces that.
@@ -60,7 +62,7 @@
                 printf("The %dth character of {$v} is %s<br/>", $i, $v{$i});
             }
             
-            echo "<br/>Printing special characters.  Click on the 'View source' in a rowser for more details of what is and isnt' converted.";
+            echo "<br/>Printing special characters.  Click on the 'View source' in a browser for more details of what is and isn't converted.";
             $a = "aeioü & AÉIOU<br/>";
             $a_htmlentities = htmlentities($a);
             $a_htmlspecialchars= htmlspecialchars($a);
